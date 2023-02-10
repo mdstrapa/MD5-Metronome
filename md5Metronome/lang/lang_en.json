@@ -1,0 +1,42 @@
+[
+
+ { "id": 0, "value":"Start"},
+ { "id": 1, "value":"Stop"},
+ { "id": 2, "value":"Simple"},
+ { "id": 3, "value":"Set List"},
+ { "id": 4, "value":"Preferences"},
+ { "id": 5, "value":"Save BPM Modification"},
+ 
+
+ { "id": 6, "value":"Choose the sound:"},
+ { "id": 7, "value":"Background playing:"},
+ { "id": 8, "value":"On"},
+ { "id": 9, "value":"Off"},
+ { "id": 10, "value":"Set the language:"},
+ { "id": 11, "value":"Manage set lists:"},
+ { "id": 12, "value":"Add Set List"},
+ { "id": 13, "value":"Back"},
+
+ { "id": 14, "value":"Save Set List"},
+ { "id": 15, "value":"Name:"},
+ { "id": 16, "value":"Add Song"},
+ { "id": 17, "value":"Edit Song List"},
+
+ { "id": 18, "value":"Save Song"},
+ { "id": 19, "value":"Set the BPM value by moving your finger:"},
+ { "id": 20, "value":"Choose the Set List:"},
+ { "id": 21, "value":"Succesfully saved!"},
+ 
+ { "id": 22, "value":"Delete Song"},
+ { "id": 23, "value":"Are you sure you want to delete"},
+ { "id": 24, "value":"Delete"},
+ { "id": 25, "value":"Cancel"},
+ { "id": 26, "value":"Finish Editing"},
+ 
+ { "id": 27, "value":"Song"},
+ { "id": 28, "value":"Songs"},
+ { "id": 29, "value":"Delete Set List"},
+ { "id": 30, "value":"Are you sure you want to delete"},
+ { "id": 31, "value":"Message"}
+
+ ]

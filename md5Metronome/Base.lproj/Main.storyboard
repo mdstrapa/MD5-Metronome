@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WcE-ER-hVY">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="JuraLight.ttf">
+            <string>JuraLight</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="md5Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MD5_Metronome_background_V2" translatesAutoresizingMaskIntoConstraints="NO" id="2Rb-jX-g33">
+                                <rect key="frame" x="-13" y="316.33333333333331" width="400" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="ADY-LU-fi2"/>
+                                    <constraint firstAttribute="height" constant="180" id="Dqs-ud-aMY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-ei-qsW">
+                                <rect key="frame" x="0.0" y="122" width="30" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="decreaseBpm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPh-IE-yxH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg0-vJ-OGi">
+                                <rect key="frame" x="345" y="122" width="30" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="increaseBpm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTM-Q5-Ruh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N37-e4-kc1">
+                                <rect key="frame" x="149.66666666666666" y="118" width="76" height="52"/>
+                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="51"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc2-zd-Soq">
+                                <rect key="frame" x="141" y="240" width="93" height="53"/>
+                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="40"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uz1-Lz-n8Z"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8Ru-5g-xhY">
+                                <rect key="frame" x="10" y="669" width="355" height="118"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbO-ES-pww">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <state key="normal" title="Save Bpm Modification">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveBpmModifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yWZ-SE-Z52"/>
+                                        </connections>
+                                    </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set List:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyE-Cp-MfM">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C43-Cb-3pr">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="0.0"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LYm-fj-m6m">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="0.0"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynp-y2-cod">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="0.0"/>
+                                                        <state key="normal" title="&lt;"/>
+                                                        <connections>
+                                                            <action selector="selectPreviousSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mmC-Zy-CsS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-60-28v">
+                                                        <rect key="frame" x="131.66666666666666" y="0.0" width="91.666666666666657" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-6u-LYB">
+                                                        <rect key="frame" x="325" y="0.0" width="30" height="0.0"/>
+                                                        <state key="normal" title="&gt;"/>
+                                                        <connections>
+                                                            <action selector="selectNextSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F79-Ve-kX6"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npk-ks-R8w">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="28"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EfN-ER-UPI">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="29"/>
+                                                <segments>
+                                                    <segment title="Simple"/>
+                                                    <segment title="Set List"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="setMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="dsN-Zv-U4Y"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkT-vx-nIs">
+                                        <rect key="frame" x="0.0" y="43" width="355" height="30"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AIJ-Xe-Ac6">
+                                                <rect key="frame" x="-2" y="0.0" width="359" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="b9b-Nu-H4f"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bl5-4h-aK3">
+                                        <rect key="frame" x="0.0" y="88" width="355" height="30"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <state key="normal" title="Preferences"/>
+                                        <connections>
+                                            <segue destination="xPs-Uq-gpY" kind="show" identifier="seguePreferences" id="kVy-uf-pjv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-kf-wir">
+                                <rect key="frame" x="135" y="184.33333333333334" width="104.66666666666669" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="40"/>
+                                <color key="textColor" red="0.83333970977852001" green="0.20738595903971646" blue="0.9175150990486145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-2q-2pj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1V1-BD-rrs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WlH-Cl-2ih">
+                                            <rect key="frame" x="0.0" y="154" width="375" height="658"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <prototypes>
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="setListCell" rowHeight="70" id="Hs2-dV-qtI" customClass="SetListSelectionTableViewCell" customModule="md5Metronome" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hs2-dV-qtI" id="zTr-8N-x5c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set List Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlc-sB-6e1">
+                                                                <rect key="frame" x="97.333333333333329" y="21.333333333333329" width="180.33333333333337" height="27.666666666666671"/>
+                                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="27"/>
+                                                                <color key="textColor" red="0.84728077949346781" green="0.32702732152761199" blue="0.86500634517766495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Hlc-sB-6e1" firstAttribute="centerY" secondItem="zTr-8N-x5c" secondAttribute="centerY" id="F4r-A4-1VG"/>
+                                                            <constraint firstItem="Hlc-sB-6e1" firstAttribute="centerX" secondItem="zTr-8N-x5c" secondAttribute="centerX" id="GHM-LN-l5C"/>
+                                                        </constraints>
+                                                    </tableViewCellContentView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <outlet property="lblSetListName" destination="Hlc-sB-6e1" id="hIt-zA-C3G"/>
+                                                    </connections>
+                                                </tableViewCell>
+                                            </prototypes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="BYZ-38-t0r" id="PJ5-6W-4p6"/>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="gEP-le-dmF"/>
+                                            </connections>
+                                        </tableView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fxi-9p-b0d">
+                                            <rect key="frame" x="15" y="80" width="345" height="34"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the Set List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iC-7d-qSf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="34"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTE-vW-Ofm">
+                                                    <rect key="frame" x="315" y="0.0" width="30" height="34"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="21"/>
+                                                    <state key="normal" title="X">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="closeSetListList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4i-im-7nR"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fxi-9p-b0d" firstAttribute="leading" secondItem="1V1-BD-rrs" secondAttribute="leading" constant="15" id="GOM-86-dCZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="WlH-Cl-2ih" secondAttribute="bottom" id="Rmo-qE-0a9"/>
+                                        <constraint firstAttribute="trailing" secondItem="fxi-9p-b0d" secondAttribute="trailing" constant="15" id="uK6-66-lMf"/>
+                                        <constraint firstItem="fxi-9p-b0d" firstAttribute="top" secondItem="1V1-BD-rrs" secondAttribute="top" constant="80" id="wFC-Ay-ljN"/>
+                                        <constraint firstItem="WlH-Cl-2ih" firstAttribute="leading" secondItem="1V1-BD-rrs" secondAttribute="leading" id="xjc-2G-SMo"/>
+                                        <constraint firstAttribute="trailing" secondItem="WlH-Cl-2ih" secondAttribute="trailing" id="yAN-IA-iIT"/>
+                                        <constraint firstItem="WlH-Cl-2ih" firstAttribute="top" secondItem="fxi-9p-b0d" secondAttribute="bottom" constant="40" id="zEu-QC-Aw7"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8Ru-5g-xhY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Jf-FJ-QeN"/>
+                            <constraint firstItem="2Rb-jX-g33" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E1B-Bd-HCt"/>
+                            <constraint firstItem="WX2-kf-wir" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JbF-0q-wFW"/>
+                            <constraint firstItem="8Ru-5g-xhY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="MCQ-ws-CAj"/>
+                            <constraint firstItem="qTY-ei-qsW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P8H-1w-bre"/>
+                            <constraint firstItem="4zW-2q-2pj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZsR-up-6gg"/>
+                            <constraint firstItem="N37-e4-kc1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aVE-vz-BIK"/>
+                            <constraint firstItem="qTY-ei-qsW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="abf-Kk-GHm"/>
+                            <constraint firstAttribute="bottom" secondItem="8Ru-5g-xhY" secondAttribute="bottom" constant="25" id="bzr-Hf-fx5"/>
+                            <constraint firstItem="xc2-zd-Soq" firstAttribute="top" secondItem="WX2-kf-wir" secondAttribute="bottom" constant="15" id="cg9-zf-U1N"/>
+                            <constraint firstItem="WX2-kf-wir" firstAttribute="top" secondItem="N37-e4-kc1" secondAttribute="bottom" constant="15" id="dy5-S5-UDt"/>
+                            <constraint firstItem="2Rb-jX-g33" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fNW-wP-pzh"/>
+                            <constraint firstItem="N37-e4-kc1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="gCf-c8-Lq5"/>
+                            <constraint firstAttribute="bottom" secondItem="4zW-2q-2pj" secondAttribute="bottom" id="gdd-hd-hu7"/>
+                            <constraint firstItem="Dg0-vJ-OGi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="kOU-tL-QUr"/>
+                            <constraint firstItem="xc2-zd-Soq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="px8-uE-z55"/>
+                            <constraint firstItem="4zW-2q-2pj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qG4-ik-W1M"/>
+                            <constraint firstItem="Dg0-vJ-OGi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qs9-cv-Xap"/>
+                            <constraint firstAttribute="trailing" secondItem="8Ru-5g-xhY" secondAttribute="trailing" constant="10" id="swc-QJ-6gl"/>
+                            <constraint firstItem="4zW-2q-2pj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yfB-oj-991"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BRK-iW-PbW" appends="YES" id="BHP-4g-fkw"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="nJc-yi-BTa"/>
+                    <connections>
+                        <outlet property="bpmLabel" destination="N37-e4-kc1" id="HtJ-eA-B5f"/>
+                        <outlet property="btnCloseSetListList" destination="pTE-vW-Ofm" id="SyR-S1-dUh"/>
+                        <outlet property="btnSaveBpmModification" destination="KbO-ES-pww" id="QF5-UT-qE0"/>
+                        <outlet property="decreaseButton" destination="qTY-ei-qsW" id="zGh-Of-SNE"/>
+                        <outlet property="increaseButton" destination="Dg0-vJ-OGi" id="5Jn-EI-Yza"/>
+                        <outlet property="labelTempo" destination="WX2-kf-wir" id="bDy-M7-hdJ"/>
+                        <outlet property="lblChooseSetList" destination="5iC-7d-qSf" id="5oV-gh-DBc"/>
+                        <outlet property="lblCurrentSongName" destination="eSU-60-28v" id="8WC-cl-LTP"/>
+                        <outlet property="lblSetList" destination="UyE-Cp-MfM" id="YP3-Bj-o2b"/>
+                        <outlet property="preferencesButton" destination="Bl5-4h-aK3" id="U0U-M7-RTW"/>
+                        <outlet property="segPlayMode" destination="EfN-ER-UPI" id="lvb-pq-k5w"/>
+                        <outlet property="sliderVolume" destination="AIJ-Xe-Ac6" id="L0a-uL-ebh"/>
+                        <outlet property="stackSongNavigation" destination="C43-Cb-3pr" id="4rD-1U-0Rr"/>
+                        <outlet property="startButton" destination="xc2-zd-Soq" id="Oc4-zd-9p7"/>
+                        <outlet property="tblSetListList" destination="WlH-Cl-2ih" id="YSP-LI-6AH"/>
+                        <outlet property="viewSetListList" destination="4zW-2q-2pj" id="skh-Np-pe3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="BRK-iW-PbW">
+                    <connections>
+                        <action selector="changeBpmValue:" destination="BYZ-38-t0r" id="fzA-k3-eDY"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="317.60000000000002" y="131.52709359605913"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="Rmu-KJ-eyz">
+            <objects>
+                <viewController title="Preferences" modalTransitionStyle="crossDissolve" id="xPs-Uq-gpY" customClass="PreferencesViewController" customModule="md5Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jed-cl-oEE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundSettings" translatesAutoresizingMaskIntoConstraints="NO" id="c7V-Sj-D9o">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jur-jG-tES">
+                                <rect key="frame" x="16" y="108" width="343" height="238"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqg-Pz-GC8">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="21k-Dh-jzV">
+                                        <rect key="frame" x="0.0" y="37.333333333333343" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="1"/>
+                                            <segment title="2"/>
+                                            <segment title="3"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeMetronomeSound:" destination="xPs-Uq-gpY" eventType="valueChanged" id="Ost-0i-AsV"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set the language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5w-Pl-izp">
+                                        <rect key="frame" x="0.0" y="85.333333333333343" width="343" height="17.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-Jm-tPt">
+                                        <rect key="frame" x="0.0" y="122.66666666666666" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="English"/>
+                                            <segment title="Português"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeLanguage:" destination="xPs-Uq-gpY" eventType="valueChanged" id="Baq-n3-d5m"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage set lists:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4D-9Q-e5V">
+                                        <rect key="frame" x="0.0" y="170.66666666666669" width="343" height="17.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxW-DN-yu5">
+                                        <rect key="frame" x="0.0" y="208" width="343" height="30"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <state key="normal" title="Add Set List"/>
+                                        <connections>
+                                            <segue destination="5PS-JE-Xbx" kind="show" identifier="AddSetList" id="yJF-P5-tmi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJv-2g-pSR">
+                                <rect key="frame" x="16" y="354" width="343" height="428"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="setListCell" id="QSF-Pn-KGX" customClass="SetListTableViewCell" customModule="md5Metronome" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QSF-Pn-KGX" id="N8C-jW-rvT">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhI-ma-V2a">
+                                                    <rect key="frame" x="317.66666666666669" y="13.999999999999998" width="10.333333333333314" height="17.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                    <color key="textColor" red="0.84728077950000003" green="0.32702732150000002" blue="0.86500634519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set list name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8b-jV-E58">
+                                                    <rect key="frame" x="0.0" y="13.999999999999998" width="108.66666666666667" height="17.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="QhI-ma-V2a" firstAttribute="centerY" secondItem="N8C-jW-rvT" secondAttribute="centerY" id="0PX-p3-KSZ"/>
+                                                <constraint firstItem="X8b-jV-E58" firstAttribute="centerY" secondItem="N8C-jW-rvT" secondAttribute="centerY" id="Uf7-Wx-d7c"/>
+                                                <constraint firstItem="X8b-jV-E58" firstAttribute="leading" secondItem="N8C-jW-rvT" secondAttribute="leading" id="ZYh-Oy-hCI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QhI-ma-V2a" secondAttribute="trailing" id="Zbq-jy-1M8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblName" destination="X8b-jV-E58" id="OBp-bB-Rl2"/>
+                                            <outlet property="lblSongsCount" destination="QhI-ma-V2a" id="xgD-5b-tdf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xPs-Uq-gpY" id="UAw-rL-32L"/>
+                                    <outlet property="delegate" destination="xPs-Uq-gpY" id="cKT-Yg-eHm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Z84-CO-zgx" firstAttribute="trailing" secondItem="jur-jG-tES" secondAttribute="trailing" constant="16" id="2dU-Zh-Lcx"/>
+                            <constraint firstItem="Z84-CO-zgx" firstAttribute="trailing" secondItem="vJv-2g-pSR" secondAttribute="trailing" constant="16" id="30b-o8-ago"/>
+                            <constraint firstAttribute="bottom" secondItem="vJv-2g-pSR" secondAttribute="bottom" constant="30" id="HPv-jP-0wa"/>
+                            <constraint firstItem="vJv-2g-pSR" firstAttribute="centerX" secondItem="jed-cl-oEE" secondAttribute="centerX" id="KaD-pO-Gag"/>
+                            <constraint firstItem="c7V-Sj-D9o" firstAttribute="trailing" secondItem="Z84-CO-zgx" secondAttribute="trailing" id="MwH-Ng-8ms"/>
+                            <constraint firstItem="c7V-Sj-D9o" firstAttribute="leading" secondItem="Z84-CO-zgx" secondAttribute="leading" id="Nky-Q6-VGm"/>
+                            <constraint firstItem="c7V-Sj-D9o" firstAttribute="top" secondItem="jed-cl-oEE" secondAttribute="top" id="PoK-dI-QxF"/>
+                            <constraint firstItem="vJv-2g-pSR" firstAttribute="top" secondItem="jur-jG-tES" secondAttribute="bottom" constant="8" id="VfQ-lL-LAT"/>
+                            <constraint firstItem="vJv-2g-pSR" firstAttribute="leading" secondItem="Z84-CO-zgx" secondAttribute="leading" constant="16" id="W1I-Rn-FDh"/>
+                            <constraint firstAttribute="bottom" secondItem="c7V-Sj-D9o" secondAttribute="bottom" id="m3j-wF-ong"/>
+                            <constraint firstItem="jur-jG-tES" firstAttribute="leading" secondItem="Z84-CO-zgx" secondAttribute="leading" constant="16" id="piH-Yg-AvV"/>
+                            <constraint firstItem="jur-jG-tES" firstAttribute="top" secondItem="Z84-CO-zgx" secondAttribute="top" constant="20" id="rHP-sR-oz0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z84-CO-zgx"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAddSetList" destination="mxW-DN-yu5" id="hYz-Jz-2Lj"/>
+                        <outlet property="lblChooseTheSound" destination="eqg-Pz-GC8" id="4LM-8H-gIQ"/>
+                        <outlet property="lblManageSetLists" destination="T4D-9Q-e5V" id="paI-1i-O1B"/>
+                        <outlet property="lblSelectTheLanguage" destination="s5w-Pl-izp" id="JVy-Jm-JXU"/>
+                        <outlet property="segSelectTheLanguage" destination="UPJ-Jm-tPt" id="wDa-jP-vnk"/>
+                        <outlet property="seguementChooseSound" destination="21k-Dh-jzV" id="E6H-Eo-2DX"/>
+                        <outlet property="tblSetListList" destination="vJv-2g-pSR" id="Lht-4Z-w51"/>
+                        <segue destination="5PS-JE-Xbx" kind="show" identifier="EditSetList" id="JGU-lg-mlA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzK-5K-q3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="130.78817733990149"/>
+        </scene>
+        <!--Set List-->
+        <scene sceneID="kjR-3G-n25">
+            <objects>
+                <viewController title="Set List" id="5PS-JE-Xbx" customClass="SetListViewController" customModule="md5Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGw-qm-HlQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundSettings" translatesAutoresizingMaskIntoConstraints="NO" id="WD8-tW-lmO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hda-JH-Tni">
+                                <rect key="frame" x="16" y="104" width="343" height="98"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MLl-3r-sUi">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl7-Wy-E5A">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                <state key="normal" title="Save Set List"/>
+                                                <connections>
+                                                    <action selector="saveSetList:" destination="5PS-JE-Xbx" eventType="touchUpInside" id="l9j-6e-upa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lJq-U8-0gy">
+                                        <rect key="frame" x="0.0" y="34" width="343" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDB-xK-IUD">
+                                                <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="30"/>
+                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIU-b8-zcF">
+                                                <rect key="frame" x="58.333333333333343" y="0.0" width="284.66666666666663" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" keyboardAppearance="alert"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="FWJ-wB-mf9">
+                                        <rect key="frame" x="0.0" y="68" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lek-ZU-ZNk">
+                                                <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="30"/>
+                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                <state key="normal" title="Add Song"/>
+                                                <connections>
+                                                    <segue destination="2KD-A2-akK" kind="show" identifier="AddSong" id="Wrk-bQ-YWk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP7-E9-Cq0">
+                                                <rect key="frame" x="172.66666666666663" y="0.0" width="170.33333333333337" height="30"/>
+                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                <state key="normal" title="Edit Song List"/>
+                                                <connections>
+                                                    <action selector="editSongList:" destination="5PS-JE-Xbx" eventType="touchUpInside" id="dkj-3u-D8s"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="giB-AZ-thc">
+                                <rect key="frame" x="10" y="210" width="355" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="songCell" id="reo-k4-uue" customClass="SongTableViewCell" customModule="md5Metronome" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="reo-k4-uue" id="kAY-4G-4Sx">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMl-ZF-mHL">
+                                                    <rect key="frame" x="5" y="7.6666666666666661" width="17" height="28.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="28"/>
+                                                    <color key="textColor" red="0.49477817359999998" green="0.48917568550000001" blue="0.49277147710000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLf-v7-AMw">
+                                                    <rect key="frame" x="35.000000000000007" y="13.999999999999998" width="91.666666666666686" height="17.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blE-gL-cFJ">
+                                                    <rect key="frame" x="324.66666666666669" y="13.999999999999998" width="25.333333333333314" height="17.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                    <color key="textColor" red="0.83333970980000005" green="0.20738595900000001" blue="0.91751509899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zLf-v7-AMw" firstAttribute="leading" secondItem="fMl-ZF-mHL" secondAttribute="leading" constant="30" id="1qk-cv-tQr"/>
+                                                <constraint firstItem="zLf-v7-AMw" firstAttribute="centerY" secondItem="kAY-4G-4Sx" secondAttribute="centerY" id="7pN-uU-u5V"/>
+                                                <constraint firstAttribute="trailing" secondItem="blE-gL-cFJ" secondAttribute="trailing" constant="5" id="ETI-Kk-wev"/>
+                                                <constraint firstItem="blE-gL-cFJ" firstAttribute="centerY" secondItem="kAY-4G-4Sx" secondAttribute="centerY" id="b2P-g8-YGR"/>
+                                                <constraint firstItem="fMl-ZF-mHL" firstAttribute="leading" secondItem="kAY-4G-4Sx" secondAttribute="leading" constant="5" id="njz-iB-iI4"/>
+                                                <constraint firstItem="fMl-ZF-mHL" firstAttribute="centerY" secondItem="kAY-4G-4Sx" secondAttribute="centerY" id="ot1-rx-9bt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBpm" destination="blE-gL-cFJ" id="tSk-aI-HJp"/>
+                                            <outlet property="lblPosition" destination="fMl-ZF-mHL" id="apm-gn-AMt"/>
+                                            <outlet property="lblSongName" destination="zLf-v7-AMw" id="bcl-oA-mIo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5PS-JE-Xbx" id="9zd-2j-2cV"/>
+                                    <outlet property="delegate" destination="5PS-JE-Xbx" id="uyU-cU-M1g"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="giB-AZ-thc" firstAttribute="centerX" secondItem="mGw-qm-HlQ" secondAttribute="centerX" id="39d-ps-bfG"/>
+                            <constraint firstItem="hda-JH-Tni" firstAttribute="top" secondItem="IAH-fs-bn2" secondAttribute="top" constant="16" id="7aq-Me-0yE"/>
+                            <constraint firstItem="WD8-tW-lmO" firstAttribute="trailing" secondItem="IAH-fs-bn2" secondAttribute="trailing" id="Iud-hk-QHn"/>
+                            <constraint firstItem="giB-AZ-thc" firstAttribute="leading" secondItem="IAH-fs-bn2" secondAttribute="leading" constant="10" id="Tbm-mD-NMC"/>
+                            <constraint firstItem="hda-JH-Tni" firstAttribute="leading" secondItem="IAH-fs-bn2" secondAttribute="leading" constant="16" id="XeN-bq-a6N"/>
+                            <constraint firstItem="hda-JH-Tni" firstAttribute="centerX" secondItem="mGw-qm-HlQ" secondAttribute="centerX" id="dor-5M-0Kt"/>
+                            <constraint firstItem="IAH-fs-bn2" firstAttribute="trailing" secondItem="hda-JH-Tni" secondAttribute="trailing" constant="16" id="ec9-O4-i27"/>
+                            <constraint firstItem="giB-AZ-thc" firstAttribute="top" secondItem="hda-JH-Tni" secondAttribute="bottom" constant="8" id="iPF-VD-fb4"/>
+                            <constraint firstItem="IAH-fs-bn2" firstAttribute="trailing" secondItem="giB-AZ-thc" secondAttribute="trailing" constant="10" id="oal-ou-IIx"/>
+                            <constraint firstItem="WD8-tW-lmO" firstAttribute="top" secondItem="mGw-qm-HlQ" secondAttribute="top" id="s0l-ly-2q9"/>
+                            <constraint firstAttribute="bottom" secondItem="WD8-tW-lmO" secondAttribute="bottom" id="tgU-t4-JiJ"/>
+                            <constraint firstItem="IAH-fs-bn2" firstAttribute="bottom" secondItem="giB-AZ-thc" secondAttribute="bottom" id="xi3-2g-2Dl"/>
+                            <constraint firstItem="WD8-tW-lmO" firstAttribute="leading" secondItem="IAH-fs-bn2" secondAttribute="leading" id="zAf-Ze-sRk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IAH-fs-bn2"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAddSong" destination="Lek-ZU-ZNk" id="fMr-Zv-rKT"/>
+                        <outlet property="btnEditSongList" destination="RP7-E9-Cq0" id="epJ-XI-kNm"/>
+                        <outlet property="btnSave" destination="Rl7-Wy-E5A" id="2QT-W8-7DK"/>
+                        <outlet property="lblName" destination="fDB-xK-IUD" id="bqd-es-wnO"/>
+                        <outlet property="tblSongs" destination="giB-AZ-thc" id="juO-ag-hiK"/>
+                        <outlet property="txtSetListName" destination="HIU-b8-zcF" id="s9v-df-0UB"/>
+                        <segue destination="2KD-A2-akK" kind="show" identifier="EditSong" id="GdS-TI-mxY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vpk-y4-gLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="130.78817733990149"/>
+        </scene>
+        <!--Add Song-->
+        <scene sceneID="u6v-Cw-NN3">
+            <objects>
+                <viewController title="Add Song" id="2KD-A2-akK" customClass="SongViewController" customModule="md5Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q3s-Qt-zIg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundSettings" translatesAutoresizingMaskIntoConstraints="NO" id="iTx-hG-SDI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="x0u-kq-Fo2">
+                                <rect key="frame" x="16" y="104" width="343" height="99.333333333333314"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfs-Ue-D08">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                        <state key="normal" title="Save Song"/>
+                                        <connections>
+                                            <action selector="saveSong:" destination="2KD-A2-akK" eventType="touchUpInside" id="aus-Sr-fRi"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dzS-ju-WeY">
+                                        <rect key="frame" x="0.0" y="42" width="343" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gg-of-3wQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="30"/>
+                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-9i-Bd9">
+                                                <rect key="frame" x="58.333333333333343" y="0.0" width="284.66666666666663" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" keyboardAppearance="alert"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gds-kS-UMS">
+                                        <rect key="frame" x="0.0" y="84" width="343" height="15.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set the BPM value by moving your finger:" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxw-l0-Ww5">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="15.333333333333334"/>
+                                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paC-Ko-E1r">
+                                <rect key="frame" x="137.66666666666666" y="372" width="99.666666666666657" height="68"/>
+                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="67"/>
+                                <color key="textColor" red="0.84728077950000003" green="0.32702732150000002" blue="0.86500634519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD0-T8-to4">
+                                <rect key="frame" x="329" y="382" width="30" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="increaseBpm:" destination="2KD-A2-akK" eventType="touchUpInside" id="oIz-Zs-YZN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-mz-OLQ">
+                                <rect key="frame" x="16" y="382" width="30" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="decreaseBpm:" destination="2KD-A2-akK" eventType="touchUpInside" id="ld1-8A-oEe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIt-9c-3m8">
+                                <rect key="frame" x="16" y="731.33333333333337" width="343" height="26.666666666666629"/>
+                                <fontDescription key="fontDescription" name="JuraLight" family="Jura" pointSize="26"/>
+                                <color key="textColor" red="0.84728077950000003" green="0.32702732150000002" blue="0.86500634519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="FFb-mz-OLQ" firstAttribute="leading" secondItem="VnK-AF-ioV" secondAttribute="leading" constant="16" id="1R4-B0-wmu"/>
+                            <constraint firstItem="SIt-9c-3m8" firstAttribute="centerX" secondItem="Q3s-Qt-zIg" secondAttribute="centerX" id="3M6-WP-Y0X"/>
+                            <constraint firstAttribute="bottom" secondItem="iTx-hG-SDI" secondAttribute="bottom" id="7yK-oc-pvG"/>
+                            <constraint firstItem="iTx-hG-SDI" firstAttribute="leading" secondItem="VnK-AF-ioV" secondAttribute="leading" id="FKw-Hx-Y6d"/>
+                            <constraint firstItem="paC-Ko-E1r" firstAttribute="centerY" secondItem="Q3s-Qt-zIg" secondAttribute="centerY" id="HkQ-ec-cHn"/>
+                            <constraint firstItem="iTx-hG-SDI" firstAttribute="top" secondItem="Q3s-Qt-zIg" secondAttribute="top" id="Ii7-eW-TB8"/>
+                            <constraint firstItem="VnK-AF-ioV" firstAttribute="trailing" secondItem="x0u-kq-Fo2" secondAttribute="trailing" constant="16" id="K7Y-bU-ZuQ"/>
+                            <constraint firstItem="VnK-AF-ioV" firstAttribute="trailing" secondItem="SIt-9c-3m8" secondAttribute="trailing" constant="16" id="KQ3-Ld-V48"/>
+                            <constraint firstItem="SIt-9c-3m8" firstAttribute="leading" secondItem="VnK-AF-ioV" secondAttribute="leading" constant="16" id="Svw-8s-ePO"/>
+                            <constraint firstItem="x0u-kq-Fo2" firstAttribute="centerX" secondItem="Q3s-Qt-zIg" secondAttribute="centerX" id="ce4-8a-Cy2"/>
+                            <constraint firstItem="FFb-mz-OLQ" firstAttribute="centerY" secondItem="Q3s-Qt-zIg" secondAttribute="centerY" id="ceU-Ja-Cp8"/>
+                            <constraint firstItem="paC-Ko-E1r" firstAttribute="centerX" secondItem="Q3s-Qt-zIg" secondAttribute="centerX" id="fT6-jJ-gZN"/>
+                            <constraint firstItem="x0u-kq-Fo2" firstAttribute="top" secondItem="VnK-AF-ioV" secondAttribute="top" constant="16" id="n5R-J9-sVT"/>
+                            <constraint firstItem="x0u-kq-Fo2" firstAttribute="leading" secondItem="VnK-AF-ioV" secondAttribute="leading" constant="16" id="nzd-uR-4bR"/>
+                            <constraint firstItem="iTx-hG-SDI" firstAttribute="trailing" secondItem="VnK-AF-ioV" secondAttribute="trailing" id="of1-Xk-Cyc"/>
+                            <constraint firstItem="VnK-AF-ioV" firstAttribute="trailing" secondItem="mD0-T8-to4" secondAttribute="trailing" constant="16" id="pC7-9f-17m"/>
+                            <constraint firstItem="VnK-AF-ioV" firstAttribute="bottom" secondItem="SIt-9c-3m8" secondAttribute="bottom" constant="20" id="q1r-5f-ibi"/>
+                            <constraint firstItem="mD0-T8-to4" firstAttribute="centerY" secondItem="Q3s-Qt-zIg" secondAttribute="centerY" id="seP-Tr-wcV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VnK-AF-ioV"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vPP-x6-sc1" appends="YES" id="AuU-ii-fZR"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="btnSaveSong" destination="qfs-Ue-D08" id="znl-Ne-Pc5"/>
+                        <outlet property="lblBpm" destination="paC-Ko-E1r" id="xyP-8K-5NZ"/>
+                        <outlet property="lblInstructions" destination="mxw-l0-Ww5" id="9K9-Rr-scW"/>
+                        <outlet property="lblMessage" destination="SIt-9c-3m8" id="NhI-A1-cU6"/>
+                        <outlet property="lblName" destination="2gg-of-3wQ" id="JQQ-XW-5Sm"/>
+                        <outlet property="txtSongName" destination="hyX-9i-Bd9" id="5kO-8b-GkA"/>
+                        <segue destination="usI-gu-aPa" kind="unwind" unwindAction="unwindFor:towardsViewController:" id="uru-sI-D8V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7a-BP-YEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="usI-gu-aPa" userLabel="Exit" sceneMemberID="exit"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vPP-x6-sc1">
+                    <connections>
+                        <action selector="changeBpm:" destination="2KD-A2-akK" id="oU7-6D-bJl"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2813.5999999999999" y="131.52709359605913"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="paH-Ak-eU0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcE-ER-hVY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bex-4E-8yk">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="W7L-r8-5pQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOx-na-tRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-561" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MD5_Metronome_background_V2" width="563" height="249"/>
+        <image name="backgroundSettings" width="562" height="1218"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GdS-TI-mxY"/>
+        <segue reference="yJF-P5-tmi"/>
+    </inferredMetricsTieBreakers>
+</document>

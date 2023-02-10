@@ -1,0 +1,42 @@
+ [
+  
+  { "id": 0, "value":"Iniciar"},
+  { "id": 1, "value":"Parar"},
+  { "id": 2, "value":"Simples"},
+  { "id": 3, "value":"Set List"},
+  { "id": 4, "value":"Preferências"},
+  { "id": 5, "value":"Salvar Modificação"},
+  
+  
+  { "id": 6, "value":"Escolha o som:"},
+  { "id": 7, "value":"Executar em segundo plano:"},
+  { "id": 8, "value":"Sim"},
+  { "id": 9, "value":"Não"},
+  { "id": 10, "value":"Escolha o idioma:"},
+  { "id": 11, "value":"Gerenciar set lists:"},
+  { "id": 12, "value":"Adicionar Set List"},
+  { "id": 13, "value":"Voltar"},
+  
+  { "id": 14, "value":"Salvar Set List"},
+  { "id": 15, "value":"Nome:"},
+  { "id": 16, "value":"Adicionar Música"},
+  { "id": 17, "value":"Editar Lista"},
+  
+  { "id": 18, "value":"Salvar Música"},
+  { "id": 19, "value":"Ajuste o BPM movendo o dedo na tela:"},
+  { "id": 20, "value":"Escolha o Set List:"},
+  { "id": 21, "value":"Salvo com Sucesso!"},
+  
+  { "id": 22, "value":"Excluir Música"},
+  { "id": 23, "value":"Tem certeza que quer excluir a música"},
+  { "id": 24, "value":"Excluir"},
+  { "id": 25, "value":"Cancelar"},
+  { "id": 26, "value":"Finalizar Edição"},
+  
+  { "id": 27, "value":"Música"},
+  { "id": 28, "value":"Músicas"},
+  { "id": 29, "value":"Excluir Set List"},
+  { "id": 30, "value":"Tem certeza que quer excluir o set list"},
+  { "id": 31, "value":"Mensagem"}
+  
+  ]
